@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.API", "ImportLeague.API\SantexLeague.API.csproj", "{FCED4D44-673E-4A84-BF71-E746778BD104}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.DataAccess", "SantexLeague.DataAccess\SantexLeague.DataAccess.csproj", "{6E379EF4-DE53-4AA7-BDCD-802602B51ECD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.Domain", "SantexLeague.Domain\SantexLeague.Domain.csproj", "{775A6743-7BC5-4970-B7DE-77D300CF95EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.Integration", "SantexLeague.Integration\SantexLeague.Integration.csproj", "{A969DA90-896B-42FB-B527-E47AAFE1C876}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.Common", "SantexLeague.Common\SantexLeague.Common.csproj", "{9B1C9803-17C8-4C17-A3FB-04AEDEC38292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantexLeague.Services", "SantexLeague.Services\SantexLeague.Services.csproj", "{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCED4D44-673E-4A84-BF71-E746778BD104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCED4D44-673E-4A84-BF71-E746778BD104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCED4D44-673E-4A84-BF71-E746778BD104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCED4D44-673E-4A84-BF71-E746778BD104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E379EF4-DE53-4AA7-BDCD-802602B51ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E379EF4-DE53-4AA7-BDCD-802602B51ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E379EF4-DE53-4AA7-BDCD-802602B51ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E379EF4-DE53-4AA7-BDCD-802602B51ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775A6743-7BC5-4970-B7DE-77D300CF95EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775A6743-7BC5-4970-B7DE-77D300CF95EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775A6743-7BC5-4970-B7DE-77D300CF95EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775A6743-7BC5-4970-B7DE-77D300CF95EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A969DA90-896B-42FB-B527-E47AAFE1C876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A969DA90-896B-42FB-B527-E47AAFE1C876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A969DA90-896B-42FB-B527-E47AAFE1C876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A969DA90-896B-42FB-B527-E47AAFE1C876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1C9803-17C8-4C17-A3FB-04AEDEC38292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1C9803-17C8-4C17-A3FB-04AEDEC38292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1C9803-17C8-4C17-A3FB-04AEDEC38292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1C9803-17C8-4C17-A3FB-04AEDEC38292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B0E1421-BA39-4B24-AA50-71D4FC9403AB}
+	EndGlobalSection
+EndGlobal
