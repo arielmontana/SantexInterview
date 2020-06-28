@@ -29,7 +29,7 @@ namespace SantexLeague.API.Controllers
         {
             try
             {
-                throw new Exception();
+                //throw new Exception();
                 var playerCountDto = new PlayerCountDto();
                 if (!await competitionService.Exist(code)) return StatusCode(StatusCodes.Status404NotFound, "Not Found");
                 playerCountDto.total = await playersService.GetCountByLeagueCode(code);
