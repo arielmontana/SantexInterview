@@ -26,13 +26,13 @@ namespace ImportLeague.API.Controllers
         public async Task<IActionResult> ImportAsync(string code)
         {
             var competitionInDb = await competitionService.GetByCodeAsync(code);
-            if (competitionInDb != null) return StatusCode(StatusCodes.Status409Conflict, Error.Message("League already imported"));
+            if (competitionInDb != null) return StatusCode(StatusCodes.Status409Conflict, new StatusMessage("League already imported"));
 
             var competition = importLeagueService.ImportWithCodeLeague(code).Result;
-            if (competition == null) return StatusCode(StatusCodes.Status404NotFound, Error.Message("Not Found"));
+            if (competition == null) return StatusCode(StatusCodes.Status404NotFound, new StatusMessage("Not Found"));
 
             await competitionService.SaveAsync(competition);
-            return StatusCode(StatusCodes.Status201Created, Error.Message("Successfully imported'"));
+            return StatusCode(StatusCodes.Status201Created, new StatusMessage("Successfully imported"));
         }
     }
 }

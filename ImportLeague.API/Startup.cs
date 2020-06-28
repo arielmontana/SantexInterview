@@ -55,7 +55,6 @@ namespace ImportLeague.API
                 context.Database.EnsureCreated();
             }
             app.ConfigureExceptionHandler();
-            //app.UseMiddleware<LogMiddleware>();
             app.UseStaticFiles();
             app.UseOpenApi();
             app.UseSwaggerUi3();

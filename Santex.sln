@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.Integration", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.Common", "SantexLeague.Common\SantexLeague.Common.csproj", "{9B1C9803-17C8-4C17-A3FB-04AEDEC38292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantexLeague.Services", "SantexLeague.Services\SantexLeague.Services.csproj", "{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantexLeague.Services", "SantexLeague.Services\SantexLeague.Services.csproj", "{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{D92F6ABB-166F-4AED-9989-2A89C1215E6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SantextLeague.Tests", "SantextLeague.Tests\SantextLeague.Tests.csproj", "{54318B31-F0A8-40CA-9877-404D49A543A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,16 @@ Global
 		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E7234D6-8E5E-4674-8E5D-B1461C8CCE7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54318B31-F0A8-40CA-9877-404D49A543A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54318B31-F0A8-40CA-9877-404D49A543A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54318B31-F0A8-40CA-9877-404D49A543A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54318B31-F0A8-40CA-9877-404D49A543A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54318B31-F0A8-40CA-9877-404D49A543A8} = {D92F6ABB-166F-4AED-9989-2A89C1215E6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B0E1421-BA39-4B24-AA50-71D4FC9403AB}

@@ -14,7 +14,6 @@ namespace SantexLeague.API.Controllers
     {
         private readonly IPlayersService playersService;
         private readonly ICompetitionService competitionService;
-        private const string errorMessage = "Server Error";
 
         public TotalPlayersController(IPlayersService playersService,
                                       ICompetitionService competitionService)
@@ -24,11 +23,10 @@ namespace SantexLeague.API.Controllers
         }
 
         [HttpGet("{code}")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> GetCount(string code)
         {
             var playerCountDto = new PlayerCountDto();
-            if (!await competitionService.Exist(code)) return StatusCode(StatusCodes.Status404NotFound, Error.Message("Not Found"));
+            if (!await competitionService.Exist(code)) return StatusCode(StatusCodes.Status404NotFound, new StatusMessage("Not Found"));
             playerCountDto.total = await playersService.GetCountByLeagueCode(code);
             return Ok(playerCountDto);
         }

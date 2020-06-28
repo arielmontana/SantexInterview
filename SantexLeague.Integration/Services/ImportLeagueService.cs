@@ -44,7 +44,7 @@ namespace SantexLeague.Integration
             }
         }
 
-        private Competition GetCompetition(string code)
+        public Competition GetCompetition(string code)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace SantexLeague.Integration
             }
         }
 
-        private void GetAndLoadTeamCompetition(Competition competition)
+        public void GetAndLoadTeamCompetition(Competition competition)
         {
             var tcUrl = string.Format(teamsCompetitionUrl, baseUrl, competition.ExternalId);
             var teamsCompetitionDto = httpManager.Get<TeamCompetitionDto>(tcUrl).Result;
@@ -69,7 +69,7 @@ namespace SantexLeague.Integration
             }
         }
 
-        private void GetAndLoadTeamPlayers(Competition competition)
+        public void GetAndLoadTeamPlayers(Competition competition)
         {
             var teams = competition.TeamsCompetition.Select(x => x.Team).ToList();
             do

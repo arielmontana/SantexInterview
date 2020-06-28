@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
 using Newtonsoft.Json;
+using SantexLeague.Integration.AutoMapper;
 
 namespace SantexLeague.Integration.ExternalEntities
 {
@@ -14,9 +16,7 @@ namespace SantexLeague.Integration.ExternalEntities
 
         public List<TeamCompetitionItemDto> GetItems() 
         {
-            var list = new List<TeamCompetitionItemDto>();
-            teams.ForEach(x => list.Add(new TeamCompetitionItemDto() { team = x, competition = this.competition }));
-            return list;
+            return CustomTeamCompetitionItemMapper.Map(this);
         }
     }
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using Serilog;
 
 namespace SantexLeague.Common.Exceptions
@@ -21,7 +22,8 @@ namespace SantexLeague.Common.Exceptions
                     if (contextFeature != null)
                     {
                         Log.Error($"Something went wrong: {contextFeature.Error}");
-                        await context.Response.WriteAsync(Error.Message("Server Error"));
+                        var msg = new StatusMessage("Server Error");
+                        await context.Response.WriteAsync(JsonConvert.SerializeObject(msg));
                     }
                 });
             });
