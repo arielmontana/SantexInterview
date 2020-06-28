@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SantexLeague.Common.Exceptions;
 using SantexLeague.Integration.Services;
 using SantexLeague.Services;
-using Serilog;
 
 namespace ImportLeague.API.Controllers
 {
@@ -14,7 +13,7 @@ namespace ImportLeague.API.Controllers
     {
         private readonly IImportLeagueService importLeagueService;
         private readonly ICompetitionService competitionService;
-        private const string errorMessage = "Server Error";
+
         public ImportLeagueController(IImportLeagueService importLeagueService,
                                       ICompetitionService competitionService)
         {
@@ -26,21 +25,14 @@ namespace ImportLeague.API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> ImportAsync(string code)
         {
-            try
-            {
-                var competitionInDb = await competitionService.GetByCodeAsync(code);
-                if (competitionInDb != null) return StatusCode(StatusCodes.Status409Conflict, "League already imported");
+            var competitionInDb = await competitionService.GetByCodeAsync(code);
+            if (competitionInDb != null) return StatusCode(StatusCodes.Status409Conflict, Error.Message("League already imported"));
 
-                var competition = importLeagueService.ImportWithCodeLeague(code).Result;
-                if (competition == null) return StatusCode(StatusCodes.Status404NotFound, "Not Found");
+            var competition = importLeagueService.ImportWithCodeLeague(code).Result;
+            if (competition == null) return StatusCode(StatusCodes.Status404NotFound, Error.Message("Not Found"));
 
-                await competitionService.SaveAsync(competition);
-                return StatusCode(StatusCodes.Status201Created, $"Successfully imported'");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status504GatewayTimeout, "Server Error");
-            }
+            await competitionService.SaveAsync(competition);
+            return StatusCode(StatusCodes.Status201Created, Error.Message("Successfully imported'"));
         }
     }
 }

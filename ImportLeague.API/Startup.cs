@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SantexLeague.API.LogMiddleware;
+using SantexLeague.Common.Exceptions;
 using SantexLeague.DataAccess.DependencyInjection;
 using SantexLeague.DataAccess.EntityFramework;
 using SantexLeague.Integration.DependencyInjection;
@@ -54,7 +54,8 @@ namespace ImportLeague.API
                 var context = serviceScope.ServiceProvider.GetRequiredService<SantexContext>();
                 context.Database.EnsureCreated();
             }
-            app.UseMiddleware<LogMiddleware>();
+            app.ConfigureExceptionHandler();
+            //app.UseMiddleware<LogMiddleware>();
             app.UseStaticFiles();
             app.UseOpenApi();
             app.UseSwaggerUi3();

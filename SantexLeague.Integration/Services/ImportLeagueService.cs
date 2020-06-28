@@ -7,6 +7,7 @@ using SantexLeague.Domain;
 using SantexLeague.Integration.ExternalEntities;
 using SantexLeague.Integration.HttpUtilities;
 using SantexLeague.Integration.Services;
+using Serilog;
 
 namespace SantexLeague.Integration
 {
@@ -89,7 +90,7 @@ namespace SantexLeague.Integration
                 }
                 catch (Exception ex)
                 {
-                    // Allows to retry because the API has limited the requests
+                    Log.Information(ex, tpUrl);
                 }
             }
             while (teams.Any(x => x.PlayersTeam == null));
